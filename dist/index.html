@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FinFlow CRM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="overrides.css">
+</head>
+<body>
+  <div id="login" class="login-shell">
+    <section class="login-brand">
+      <div class="brand-mark">F</div>
+      <div><strong>FinFlow</strong><span>sales workspace</span></div>
+      <div class="login-copy"><span class="eyebrow">Продажи без хаоса</span><h1>Все заявки.<br>Один понятный ритм.</h1><p>Лиды, оплаты и мотивация команды — в едином рабочем пространстве.</p></div>
+      <div class="mini-board"><i></i><i></i><i></i><i></i><i></i></div>
+    </section>
+    <section class="login-form-wrap">
+      <form id="loginForm" class="login-card">
+        <div class="mobile-logo"><div class="brand-mark">F</div><strong>FinFlow</strong></div>
+        <span class="eyebrow">Добро пожаловать</span><h2>Вход в CRM</h2><p>Выберите демо-профиль — данные уже подставлены.</p>
+        <div class="role-switch"><button type="button" class="active" data-demo="admin">Руководитель</button><button type="button" data-demo="manager">Менеджер</button></div>
+        <label>Логин<input id="username" value="admin" autocomplete="username"></label>
+        <label>Пароль<div class="pass"><input id="password" type="password" value="Admin2026!" autocomplete="current-password"><button type="button" id="showPass">Показать</button></div></label>
+        <button class="primary wide" type="submit">Войти в систему <span>→</span></button>
+        <div class="demo-note"><b>Демо-доступ</b><span id="hint">admin · Admin2026!</span></div>
+      </form>
+    </section>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="logo"><div class="brand-mark">F</div><div><strong>FinFlow</strong><span>CRM</span></div></div>
+      <nav>
+        <button data-page="workspace" class="nav-item"><span>⌂</span>Рабочий стол</button>
+        <button data-page="kanban" class="nav-item active"><span>▦</span>Заявки <em id="leadBadge">0</em></button>
+        <button data-page="payments" class="nav-item"><span>₽</span>Оплаты</button>
+        <div class="nav-label admin-only">Управление</div>
+        <button data-page="plans" class="nav-item admin-only"><span>◒</span>Дашборд</button>
+        <button data-page="team" class="nav-item admin-only"><span>♙</span>Сотрудники</button>
+      </nav>
+      <div class="sidebar-bottom"><button class="nav-item"><span>?</span>Помощь</button><button id="logout" class="profile"><div class="avatar">ВК</div><div><strong id="sideName">Вася К.</strong><span id="sideRole">Руководитель</span></div><b>⋮</b></button></div>
+    </aside>
+    <main>
+      <header class="topbar"><button id="menuBtn" class="menu-btn">☰</button><div><h1 id="pageTitle">Заявки</h1><p id="pageSub">Управляйте воронкой продаж</p></div><div class="top-actions"><div class="search">⌕<input id="globalSearch" placeholder="Поиск по CRM"></div><button class="icon-btn">♢<i></i></button><div class="avatar" id="topAvatar">ВК</div></div></header>
+      <section id="content" class="content"></section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal hidden"><div class="modal-card"><button class="modal-close">×</button><div id="modalBody"></div></div></div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
