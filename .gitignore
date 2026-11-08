@@ -1,3 +1,8 @@
 data/*.sqlite
 data/*.sqlite-shm
 data/*.sqlite-wal
+data/uploads/
+data/invoices/
+data/invoice-template-preview.pdf
+secrets/
+.env
